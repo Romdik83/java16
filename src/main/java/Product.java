@@ -1,13 +1,11 @@
-import java.util.Objects;
-
 public class Product {
     protected int id;
-    protected String title;
+    protected String name;
     protected int price;
 
-    public Product(int id, String title, int price) {
+    public Product(int id, String name, int price) {
         this.id = id;
-        this.title = title;
+        this.name = name;
         this.price = price;
     }
 
@@ -19,12 +17,12 @@ public class Product {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getPrice() {
@@ -34,22 +32,9 @@ public class Product {
     public void setPrice(int price) {
         this.price = price;
     }
-
-    // Вспомогательные методы для корректной работы equals
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return id == product.id && price == product.price && title.equals(product.title);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title, price);
-    }
+}
 
 
     // геттеры + сеттеры
     // на id только геттер — пусть будет неизменяемым для товара
-}
+
